@@ -1,11 +1,12 @@
-import { Routes } from "react-router-dom"
-import { DefaultTemplate } from "./components/DefaultTemplate"
+import RoutesModule from "./RoutesModule";
+import { DefaultTemplate } from "./components/DefaultTemplate";
+import "./styles/index.scss";
 
 function App() {
 
   return (
     <DefaultTemplate>
-      <Routes />
+      <RoutesModule />
     </DefaultTemplate>
   )
 }

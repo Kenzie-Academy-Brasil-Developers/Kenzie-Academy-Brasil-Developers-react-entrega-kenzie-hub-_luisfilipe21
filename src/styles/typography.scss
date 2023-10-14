@@ -1,28 +1,50 @@
 .title-1{
     font-size: var(--size-1);
     font-weight: 700;
-    
+    line-height: 1.75rem;
+    font-family: var(--font-primary);
 }
 
 .title-2{
     font-size: var(--size-2);
     font-weight: 700;
+    font-family: var(--font-primary);
     
 }
 
 .headline{
     font-size: var(--size-3);
-    font-weight: 500;
+    font-weight: 400;
+    font-family: var(--font-primary);
     
 }
 
 .headlineBold{
+    font-family: var(--font-primary);
     font-size: var(--size-3);
-    font-weight: 700;
-    
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--grey-1);
 }
 
 .paragraph{
     font-size: var(--size-1);
-    font-weight: 500;
+    font-weight: 400;
+    font-family: var(--font-primary);
+    line-height: 22px;
+}
+
+.labled{
+    font-size: var(--size-3);
+    font-weight: 400;
+    font-family: var(--font-primary);
+    color: var(--grey-0);
+}
+
+.inputBox{
+    font-family: var(--font-primary);
+    font-size: var(--size-2);
+    color: var(--grey-1);
+    font-weight: 400;
+    line-height: 1.625rem;
 }
