@@ -1,6 +1,25 @@
-import  Header  from "../../components/Header";
+import { useState } from "react";
+import Header from "../../components/Header";
+import { api } from "../../components/services/api";
 
 export default () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getToken = localStorage.getItem("@KenzieHub/login");
+
+        const getList = async () => {
+            const { data } = await api.get("/users", {
+                headers: {
+                    Authorization: `Bearer ${getToken}`
+                },
+            })
+            setProducts(data);
+        }
+        getList();
+    }, [])
+
     return (
         <>
             <Header />

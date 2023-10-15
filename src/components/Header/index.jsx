@@ -1,4 +1,4 @@
-import Logo from '../../assets/Logo.svg';
+
 import style from './style.module.scss'
 
 export default () => {

@@ -7,4 +7,17 @@
     p {
         text-align: center;
     }
+
+    .btnLink {
+        display: flex;
+       
+        justify-content: center;
+        align-items: center;
+        gap: 0.6345rem;
+        flex-shrink: 0;
+        border-radius: 4px;
+        background: var(--grey-3);
+        text-decoration: none;
+        color: var(--grey-0);
+    }
 }

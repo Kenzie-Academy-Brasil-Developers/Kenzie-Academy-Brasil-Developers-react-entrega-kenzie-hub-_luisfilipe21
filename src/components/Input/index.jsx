@@ -1,10 +1,20 @@
+import { forwardRef } from 'react'
 import style from './style.module.scss'
 
-export default ({type, label}) => {
+export default forwardRef (({label, errors, ...rest}, ref) => {
     return (
         <>
-            <label type={type} className={`labled ${style.labled}`} >{label}</label>
-            <input type={type} className={`inputBox ${style.inputBox}`}/>        
+            <label
+            className={`labled ${style.labled}`}
+            >
+                {label}
+            </label>
+
+            <input 
+            ref={ref}
+            {...rest} 
+            className={`inputBox ${style.inputBox}`}
+            />        
         </>
     )
-}
+})
