@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 import style from "./style.module.scss"
 
-export default forwardRef(({ label, id, ...rest }, ref) => {
-    
+export default forwardRef(({ label, ...rest }, ref) => {
+
     return (
         <>
             <label className="labled">{label}</label>
@@ -10,22 +10,24 @@ export default forwardRef(({ label, id, ...rest }, ref) => {
                 className={style.selectBox}
                 ref={ref}
                 {...rest}
-                id={id}
             >
-                <option value="primeiro">
-                    Primeiro módulo
+                <option>
+                    Selecione um módulo
+                </option>
+                <option value="Primeiro módulo (Introdução ao Frontend)">
+                    Primeiro módulo (Introdução ao Frontend)
                 </option>
 
-                <option value="segundo">
-                    Segundo módulo
+                <option value="Segundo Módulo (Frontend avançado)">
+                    Segundo Módulo (Frontend avançado)
                 </option>
 
-                <option value="terceiro">
-                    Terceiro módulo
+                <option value="Terceiro módulo (Introdução ao Backend)">
+                    Terceiro módulo (Introdução ao Backend)
                 </option>
 
-                <option value="quarto">
-                    Quarto módulo
+                <option value="Quarto módulo (Backend Avançado)">
+                    Quarto módulo (Backend Avançado)
                 </option>
             </select>
         </>

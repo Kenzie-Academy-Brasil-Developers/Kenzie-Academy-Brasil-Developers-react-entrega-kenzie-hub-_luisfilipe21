@@ -23,7 +23,10 @@ export const registerFormSchema = z.object({
     contact: z
         .string()
         .min(1, "O nome é obrigatório."),
-}).refine(({password, confirmPassword}) => password === confirmPassword, {
+    course_module: z
+        .string()
+        .min(1, "Este campo é obrigatório."),
+}).refine(({ password, confirmPassword }) => password === confirmPassword, {
     message: "As senhas não correspondem.",
     path: ["confirmPassword"]
 })

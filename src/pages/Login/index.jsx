@@ -2,7 +2,8 @@ import { LoginForm } from "../../components/forms/LoginForm";
 import Logo from '../../assets/Logo.svg';
 import style from './style.module.scss';
 
-export default () => {
+export default ({setUser}) => {
+    
     return (
         <>
             <div className="container">
@@ -12,7 +13,7 @@ export default () => {
                 <section>
                     <div className={style.login}>
                         <h1 className="title-1">Login</h1>
-                        <LoginForm />
+                        <LoginForm setUser={setUser}/>
                     </div >
                 </section>
             </div >

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import Select from "../../Select";
+import { useState } from "react";
 
 export default () => {
 
@@ -14,17 +15,20 @@ export default () => {
         resolver: zodResolver(registerFormSchema)
     })
 
+    const [loading, setLoading] = useState(false);
+
     const navigate = useNavigate();
 
     const submit = async (payload) => {
-        console.log(payload)
         try {
             await api.post("/users", payload);
-            navigate("/dashboard");
-            toast.success("Cadastro realziado com sucesso!")
+            navigate("/");
+            toast.success("Cadastro realziado com sucesso!");
+            setLoading(true);
         } catch (error) {
-            console.log(error.message)
             toast.error("Algo deu errado...")
+        }finally{
+            setLoading(false)
         }
     }
 
@@ -84,9 +88,9 @@ export default () => {
                 errors={errors.course_module}
                 label="Selecionar módulo"
                 {...register("course_module")}
-                id="course_module"
+                
             />
-            <button type="submit" className="btn login">Cadastrar</button>
+            <button type="submit" className="btn login" disabled={loading}>Cadastrar</button>
         </form>
     )
 }

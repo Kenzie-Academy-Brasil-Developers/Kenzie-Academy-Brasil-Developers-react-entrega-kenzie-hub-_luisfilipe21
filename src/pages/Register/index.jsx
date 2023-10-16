@@ -9,7 +9,7 @@ export default () => {
         <div className="container">
             <div className={style.header}>
                 <img src={Logo} />
-                <Link to="/login" className={style.btn}>Voltar</Link>
+                <Link to="/" className={style.btn}>Voltar</Link>
             </div>
             <div>
                 <div className={style.register}>
