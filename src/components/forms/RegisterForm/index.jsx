@@ -3,8 +3,8 @@ import style from './style.module.scss';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerForm.schema";
-import {useNavigate} from "react-router-dom";
-import {toast} from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import Select from "../../Select";
 
@@ -14,16 +14,16 @@ export default () => {
         resolver: zodResolver(registerFormSchema)
     })
 
-
     const navigate = useNavigate();
 
     const submit = async (payload) => {
+        console.log(payload)
         try {
             await api.post("/users", payload);
-            navigate("/login/");
+            navigate("/dashboard");
             toast.success("Cadastro realziado com sucesso!")
         } catch (error) {
-            console.log(error)
+            console.log(error.message)
             toast.error("Algo deu errado...")
         }
     }
@@ -80,11 +80,11 @@ export default () => {
             />
 
 
-            <Select 
-            {...register("course_module")}
-            errors={errors.course_module}
-            // type="select"
-            label="Selecionar Módulo"
+            <Select
+                errors={errors.course_module}
+                label="Selecionar módulo"
+                {...register("course_module")}
+                id="course_module"
             />
             <button type="submit" className="btn login">Cadastrar</button>
         </form>

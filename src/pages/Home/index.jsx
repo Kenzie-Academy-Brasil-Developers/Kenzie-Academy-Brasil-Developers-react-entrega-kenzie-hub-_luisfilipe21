@@ -1,28 +1,34 @@
 import { useState } from "react";
-import Header from "../../components/Header";
 import { api } from "../../components/services/api";
+import style from "./style.module.scss";
+import Logo from '../../assets/Logo.svg'
 
 export default () => {
 
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const getToken = localStorage.getItem("@KenzieHub/login");
+    // useEffect(() => {
+    //     const getToken = localStorage.getItem("@KenzieHub/login");
 
-        const getList = async () => {
-            const { data } = await api.get("/users", {
-                headers: {
-                    Authorization: `Bearer ${getToken}`
-                },
-            })
-            setProducts(data);
-        }
-        getList();
-    }, [])
+    //     const getList = async () => {
+    //         const { data } = await api.get("/users", {
+    //             headers: {
+    //                 Authorization: `Bearer ${getToken}`
+    //             },
+    //         })
+    //         setProducts(data);
+    //     }
+    //     getList();
+    // }, [])
 
     return (
         <>
-            <Header />
+            <header className="container">
+                <div className={style.headerContainer}>
+                    <img src={Logo} />
+                    <button className='btn sair '>Sair</button>
+                </div>
+            </header>
             <section>
                 <div className="container">
                     <div>
