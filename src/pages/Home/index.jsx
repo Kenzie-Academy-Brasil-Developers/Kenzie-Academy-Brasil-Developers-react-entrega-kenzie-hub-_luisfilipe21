@@ -1,14 +1,14 @@
 import style from "./style.module.scss";
-import Logo from '../../assets/Logo.svg'
+import Logo from "../../assets/Logo.svg";
 
-export default ({user, exit}) => {
+export const HomePage = ({user, exit}) => {
 
     return (
         <>
             <header className="container">
                 <div className={style.headerContainer}>
                     <img src={Logo} />
-                    <button className='btn sair' onClick={() => exit()} >Sair</button>
+                    <button className="btn sair" onClick={() => exit()} >Sair</button>
                 </div>
             </header>
             <section>

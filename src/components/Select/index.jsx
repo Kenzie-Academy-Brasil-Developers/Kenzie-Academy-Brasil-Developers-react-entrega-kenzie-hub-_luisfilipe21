@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 
-export default forwardRef(({ label, ...rest }, ref) => {
+export const Select = forwardRef(({ label, ...rest }, ref) => {
 
     return (
         <>

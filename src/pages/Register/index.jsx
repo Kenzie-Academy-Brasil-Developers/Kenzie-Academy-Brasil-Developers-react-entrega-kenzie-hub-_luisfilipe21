@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import RegisterForm from "../../components/forms/RegisterForm";
+import {RegisterForm} from "../../components/forms/RegisterForm";
 import Logo from "../../assets/Logo.svg";
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 
-export default () => {
+export const RegisterPage = () => {
 
     return (
         <div className="container">

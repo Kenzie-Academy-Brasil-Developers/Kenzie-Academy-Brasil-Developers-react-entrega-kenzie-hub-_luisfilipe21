@@ -1,11 +1,11 @@
-import { Route, Routes, useNavigate} from 'react-router-dom';
-import { useState } from 'react';
+import { Route, Routes, useNavigate} from "react-router-dom";
+import { useState } from "react";
 
-import Login from '../pages/Login';
-import Home from '../pages/Home';
-import Register from '../pages/Register';
+import {LoginPage} from "../pages/Login";
+import {HomePage} from "../pages/Home";
+import {RegisterPage} from "../pages/Register";
 
-export default () => {
+export const RoutesModule = () => {
     const [ user, setUser ] = useState(null);
 
     const navigate = useNavigate();
@@ -20,9 +20,9 @@ export default () => {
     
     return (
         <Routes>
-            <Route path="/" element={<Login setUser={setUser} />} />
-            <Route path="/register" element={<Register/>}/>
-            <Route path="/dashboard" element={<Home user={user} exit={exit}/>}/>
+            <Route path="/" element={<LoginPage setUser={setUser} />} />
+            <Route path="/register" element={<RegisterPage/>}/>
+            <Route path="/dashboard" element={<HomePage user={user} exit={exit}/>}/>
         </Routes>
     )
 }

@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
-import Input from "../../Input";
-import style from './style.module.scss';
+import {Input} from "../../Input";
+import style from "./style.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginFormSchema } from "./loginForm.schema";
 import { Link, useNavigate } from "react-router-dom";
@@ -21,7 +21,6 @@ export const LoginForm = ({setUser}) => {
         try {
             const {data} = await api.post("/sessions", payload);
             localStorage.setItem("@KenzieHub/login", data.token);
-            console.log(data.user)
             setUser(data.user);
             navigate("/dashboard");
             setLoading(true);

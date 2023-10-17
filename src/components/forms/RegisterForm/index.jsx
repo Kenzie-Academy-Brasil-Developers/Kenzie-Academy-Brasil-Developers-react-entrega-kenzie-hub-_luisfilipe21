@@ -1,15 +1,15 @@
-import Input from "../../Input";
-import style from './style.module.scss';
+import {Input} from "../../Input";
+import style from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerForm.schema";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
-import Select from "../../Select";
+import {Select} from "../../Select";
 import { useState } from "react";
 
-export default () => {
+export const RegisterForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(registerFormSchema)

@@ -1,8 +1,8 @@
 import { LoginForm } from "../../components/forms/LoginForm";
-import Logo from '../../assets/Logo.svg';
-import style from './style.module.scss';
+import Logo from "../../assets/Logo.svg";
+import style from "./style.module.scss";
 
-export default ({setUser}) => {
+export const LoginPage = ({setUser}) => {
     
     return (
         <>

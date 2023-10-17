@@ -1,7 +1,7 @@
-import { forwardRef } from 'react'
-import style from './style.module.scss'
+import { forwardRef } from "react";
+import style from "./style.module.scss";
 
-export default forwardRef (({label, errors, ...rest}, ref) => {
+export const Input = forwardRef (({label, errors, ...rest}, ref) => {
     return (
         <>
             <label
@@ -9,7 +9,7 @@ export default forwardRef (({label, errors, ...rest}, ref) => {
             >
                 {label}
             </label>
-
+            {errors ? <span className="headlineBold" >{errors.message}</span> : null}
             <input 
             ref={ref}
             {...rest} 
