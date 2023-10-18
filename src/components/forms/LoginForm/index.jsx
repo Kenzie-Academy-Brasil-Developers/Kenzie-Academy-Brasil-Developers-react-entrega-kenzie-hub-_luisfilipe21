@@ -6,9 +6,12 @@ import { loginFormSchema } from "./loginForm.schema";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../../providers/UserContext";
 
-export const LoginForm = ({setUser}) => {
+export const LoginForm = () => {
+
+    const {setUser} = useContext(UserContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginFormSchema), 

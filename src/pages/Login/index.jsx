@@ -2,7 +2,7 @@ import { LoginForm } from "../../components/forms/LoginForm";
 import Logo from "../../assets/Logo.svg";
 import style from "./style.module.scss";
 
-export const LoginPage = ({setUser}) => {
+export const LoginPage = () => {
     
     return (
         <>
@@ -13,7 +13,7 @@ export const LoginPage = ({setUser}) => {
                 <section>
                     <div className={style.login}>
                         <h1 className="title-1">Login</h1>
-                        <LoginForm setUser={setUser}/>
+                        <LoginForm />
                     </div >
                 </section>
             </div >

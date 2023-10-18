@@ -1,7 +1,12 @@
 import style from "./style.module.scss";
 import Logo from "../../assets/Logo.svg";
+import { UserContext } from "../../providers/UserContext";
+import { useContext } from "react";
 
-export const HomePage = ({user, exit}) => {
+export const HomePage = () => {
+
+    
+    const {exit, user} = useContext(UserContext);
 
     return (
         <>
