@@ -24,6 +24,8 @@ export const LoginForm = () => {
         try {
             const {data} = await api.post("/sessions", payload);
             localStorage.setItem("@KenzieHub/login", data.token);
+            localStorage.setItem("@User", data.user.id);
+
             setUser(data.user);
             navigate("/dashboard");
             setLoading(true);
