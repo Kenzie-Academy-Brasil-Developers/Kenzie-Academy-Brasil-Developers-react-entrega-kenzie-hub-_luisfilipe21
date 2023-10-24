@@ -35,6 +35,7 @@ export const UserProvider = ({ children }) => {
                 });
                 setUser(data);
                 navigate(pathName);
+                // navigate(state?.lastRoute ? state.lastRoute : pathName);
             } catch (error) {
                 console.log(error);
             } finally {

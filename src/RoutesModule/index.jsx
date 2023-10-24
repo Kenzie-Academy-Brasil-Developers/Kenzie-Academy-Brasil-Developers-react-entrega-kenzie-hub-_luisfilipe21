@@ -18,6 +18,7 @@ export const RoutesModule = () => {
             <Route element={<PrivateRoutes />}>
                 <Route path="/dashboard" element={<HomePage />} />
             </Route>
+            {/* <Route path="/news" state={{lastRoute="/news"}} element={<NewsPage />} /> */}
         </Routes>
     )
 }
