@@ -1,0 +1,32 @@
+.box{
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .title{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 21px 0;
+        // width: 100%;
+        // max-width: 48.75rem;
+    }
+
+    .listSpace{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        ul{
+            background-color: rgba(33,37,41,1);
+            border-radius: 4px;
+            width: 780px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
