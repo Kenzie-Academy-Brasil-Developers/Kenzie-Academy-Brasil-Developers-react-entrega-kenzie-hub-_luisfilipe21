@@ -3,6 +3,8 @@ import Logo from "../../assets/Logo.svg";
 import { UserContext } from "../../providers/UserContext";
 import { useContext } from "react";
 import { TechList } from "../../components/TechList";
+import { CreateTechModal } from "../../components/CreateTechModal";
+import { EditTechModal } from "../../components/EditTechModal";
 
 export const HomePage = () => {
 
@@ -25,12 +27,14 @@ export const HomePage = () => {
                         <p className="headline"> {user?.course_module}</p>
                     </div>
                     <hr/>
-                        <TechList />
-                    <div className={style.info}>
+                        {/* <TechList /> */}
+                        <CreateTechModal />
+                        <EditTechModal />
+                    {/* <div className={style.info}> */}
                         {/* <h2 className="title-1">Que pena! Estamos em desenvolvimento :(</h2>
                         <p className="headline">Nossa aplicação está em desenvolvimento, em rbeve teremos novidades</p>
                          */}
-                    </div>
+                    {/* </div> */}
                 </div>
             </section>
         </>

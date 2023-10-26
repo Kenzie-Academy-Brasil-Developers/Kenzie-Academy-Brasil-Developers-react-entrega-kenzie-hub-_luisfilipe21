@@ -11,8 +11,17 @@
         justify-content: space-around;
         align-items: center;
         padding: 21px 0;
-        // width: 100%;
-        // max-width: 48.75rem;
+
+        button{
+            width: 33px;
+            height: 32px;
+            border-radius: 4px;
+            background-color: var(--grey-3);
+            border: none;
+            color: var(--grey-0);
+            font-size: 22px;
+            cursor: pointer;
+        }
     }
 
     .listSpace{

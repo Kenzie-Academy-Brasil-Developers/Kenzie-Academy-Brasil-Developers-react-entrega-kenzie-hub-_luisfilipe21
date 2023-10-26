@@ -1,0 +1,38 @@
+.formBox{
+    width: 370px;
+    height: 342px;
+    border-radius: 4px;
+    background-color: var(--grey-3);
+    gap: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .formHeader{
+        padding: 16px;
+        gap: 90px;
+        display: flex;
+        justify-content: space-around;    
+        width: 100%;
+        background-color: var(--grey-2);
+        color: var(--grey-0);
+        border-radius: 4px 4px 0 0;
+        
+        p{
+            cursor: pointer;
+            font-family: var(--font-primary);
+            color: var(--grey-1);
+        }
+
+    }
+    form{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+
+    }
+}

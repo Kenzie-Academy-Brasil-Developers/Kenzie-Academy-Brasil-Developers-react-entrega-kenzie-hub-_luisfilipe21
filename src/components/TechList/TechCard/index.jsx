@@ -1,6 +1,6 @@
 import style from "./style.module.scss";
-import  Caneta  from "../../assets/caneta.svg";
-import  Lixeira  from "../../assets/lixeira.svg"
+import  Caneta  from "../../../assets/caneta.svg";
+import  Lixeira  from "../../../assets/lixeira.svg"
 
 export const TechCard = () => {
     return (

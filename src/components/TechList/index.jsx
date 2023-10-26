@@ -1,4 +1,4 @@
-import { TechCard } from "../TechCard";
+import { TechCard } from "./TechCard";
 import style from "./style.module.scss";
 
 export const TechList = () => {
