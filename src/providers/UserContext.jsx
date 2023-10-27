@@ -7,13 +7,14 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    
+    const [techList, setTechList] = useState([]);
+
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
     const pathName = window.location.pathname;
-
-    const { state } = useLocation();
 
     const exit = () => {
         setUser(null);
@@ -34,6 +35,7 @@ export const UserProvider = ({ children }) => {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setUser(data);
+                setTechList(data.techs)
                 navigate(pathName);
                 // navigate(state?.lastRoute ? state.lastRoute : pathName);
             } catch (error) {
@@ -46,7 +48,7 @@ export const UserProvider = ({ children }) => {
     }, [])
 
     return (
-        <UserContext.Provider value={{ exit, user, setUser, loading }}>
+        <UserContext.Provider value={{ exit, user, setUser, loading, techList, setTechList}}>
             {children}
         </UserContext.Provider>
     )

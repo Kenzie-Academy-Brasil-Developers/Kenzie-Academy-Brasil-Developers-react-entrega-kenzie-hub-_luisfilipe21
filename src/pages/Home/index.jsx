@@ -27,9 +27,10 @@ export const HomePage = () => {
                         <p className="headline"> {user?.course_module}</p>
                     </div>
                     <hr/>
-                        {/* <TechList /> */}
+
+                        <TechList />
                         <CreateTechModal />
-                        <EditTechModal />
+                        {/* <EditTechModal /> */}
                     {/* <div className={style.info}> */}
                         {/* <h2 className="title-1">Que pena! Estamos em desenvolvimento :(</h2>
                         <p className="headline">Nossa aplicação está em desenvolvimento, em rbeve teremos novidades</p>

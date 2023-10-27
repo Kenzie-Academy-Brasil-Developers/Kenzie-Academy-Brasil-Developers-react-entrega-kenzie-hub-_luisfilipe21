@@ -11,7 +11,7 @@ import { UserContext } from "../../../providers/UserContext";
 
 export const LoginForm = () => {
 
-    const {setUser} = useContext(UserContext)
+    const {setUser, setTechList} = useContext(UserContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginFormSchema), 
@@ -27,6 +27,8 @@ export const LoginForm = () => {
             localStorage.setItem("@User", data.user.id);
 
             setUser(data.user);
+            setTechList(data.user.techs);
+
             navigate("/dashboard");
             setLoading(true);
             toast.success("Vamos entrando.");

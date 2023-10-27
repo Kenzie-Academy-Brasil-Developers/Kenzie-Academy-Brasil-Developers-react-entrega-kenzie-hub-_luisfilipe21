@@ -19,9 +19,9 @@ export const RegisterForm = () => {
 
     const navigate = useNavigate();
 
-    const submit = async (payload) => {
+    const submit = async (formData) => {
         try {
-            await api.post("/users", payload);
+            await api.post("/users", formData);
             navigate("/");
             toast.success("Cadastro realziado com sucesso!");
             setLoading(true);
