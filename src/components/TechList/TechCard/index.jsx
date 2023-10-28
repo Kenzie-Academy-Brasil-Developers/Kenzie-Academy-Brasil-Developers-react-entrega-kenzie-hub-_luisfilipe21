@@ -1,8 +1,11 @@
 import style from "./style.module.scss";
 import  Caneta  from "../../../assets/caneta.svg";
 import  Lixeira  from "../../../assets/lixeira.svg"
+import { useContext } from "react";
+import { TechContext } from "../../../providers/TechContext";
 
 export const TechCard = ({techs}) => {
+    const {setTechEdit, deleteTech} = useContext(TechContext)
     
     return (
         <li className={style.card}>
@@ -11,8 +14,8 @@ export const TechCard = ({techs}) => {
             </div>
             <div className={style.divButtons}>
                 <p className="headlineBold">{techs.status}</p>
-                <button><img src={Caneta} alt="Editar" /></button>
-                <button><img src={Lixeira} alt="Excluir" /></button>
+                <button onClick={() => setTechEdit(techs)}><img src={Caneta} alt="Editar" /></button>
+                <button onClick={() => deleteTech(techs.id)}><img src={Lixeira} alt="Excluir" /></button>
             </div>
         </li>
     )

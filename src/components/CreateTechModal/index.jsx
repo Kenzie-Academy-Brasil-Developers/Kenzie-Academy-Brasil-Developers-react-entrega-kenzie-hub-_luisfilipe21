@@ -7,7 +7,7 @@ import { TechContext } from "../../providers/TechContext";
 
 export const CreateTechModal = () => {
 
-    const {createTechs} = useContext(TechContext);
+    const {createTechs, setTechModal} = useContext(TechContext);
     const {register, handleSubmit} = useForm();
 
     const submit = (formData) => {
@@ -18,7 +18,7 @@ export const CreateTechModal = () => {
         <div className={style.formBox}>
             <div className={style.formHeader}>
                 <h3 className="title-3">Cadastrar Tecnologia</h3>
-                <p>X</p>
+                <p onClick={() => setTechModal(false)}>X</p>
             </div>
             <form onSubmit={handleSubmit(submit)}>
                 <Input 
@@ -28,12 +28,13 @@ export const CreateTechModal = () => {
                 label="Nome" 
                 id="title"
                  />
-                 
+
                 <SelectTech
                 label="Selecionar status"
                 {...register("status")}
                 id="status"
                 />
+
                 <button type="submit" className="btn login">Cadastrar Tecnologia</button>
             </form>
         </div>

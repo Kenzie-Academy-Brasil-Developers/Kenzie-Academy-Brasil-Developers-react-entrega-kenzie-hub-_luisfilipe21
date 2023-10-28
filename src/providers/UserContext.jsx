@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { api } from "../components/services/api";
 
 export const UserContext = createContext({});
@@ -23,7 +23,6 @@ export const UserProvider = ({ children }) => {
         localStorage.removeItem("@User");
     }
 
-
     useEffect(() => {
         const token = localStorage.getItem("@KenzieHub/login");
         const userId = localStorage.getItem("@User");
@@ -31,7 +30,7 @@ export const UserProvider = ({ children }) => {
         const getUser = async () => {
             try {
                 setLoading(true);
-                const { data } = await api.get(`/users/${userId}`, {
+                const { data } = await api.get(`/profile`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setUser(data);

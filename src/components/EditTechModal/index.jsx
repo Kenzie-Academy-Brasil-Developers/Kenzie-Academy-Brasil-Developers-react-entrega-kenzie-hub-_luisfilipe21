@@ -6,19 +6,24 @@ import { TechContext } from "../../providers/TechContext";
 import { useContext } from "react";
 
 export const EditTechModal = () => {
-    const {createTechs} = useContext(TechContext)    
-    const {register, handleSubmit} = useForm();
-
+    const {setTechEdit, techEdit, techUpdate} = useContext(TechContext);
+    
+    const {register, handleSubmit} = useForm({
+        values: {
+            status: techEdit.status,
+            title: techEdit.title
+        }
+    });
 
     const submit = (formData) => {
-        createTechs(formData)
+        techUpdate(formData.status)
     }
-
+    
     return (
         <div className={style.formBox}>
             <div className={style.formHeader}>
                 <h3 className="title-3">Tecnologia Detalhada</h3>
-                <p>X</p>
+                <p onClick={() => setTechEdit(false)}>X</p>
             </div>
             <form onClick={handleSubmit(submit)}>
                 <Input 
@@ -26,12 +31,15 @@ export const EditTechModal = () => {
                 {...register("title")}
                 placeholder="Tecnologia"
                 label="Nome" 
+                disabled
                 />
+
                 <SelectTech 
                 label="Selecionar status"
                 {...register("status")}
+
                 />
-                <button type="submit" className="btn login">Salvar Alterações</button>
+                <button className="btn login">Salvar Alterações</button>
             </form>
         </div>
     )

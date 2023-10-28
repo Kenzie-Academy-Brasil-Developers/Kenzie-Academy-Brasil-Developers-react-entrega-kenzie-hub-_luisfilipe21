@@ -27,7 +27,6 @@ export const LoginForm = () => {
             localStorage.setItem("@User", data.user.id);
 
             setUser(data.user);
-            setTechList(data.user.techs);
 
             navigate("/dashboard");
             setLoading(true);
