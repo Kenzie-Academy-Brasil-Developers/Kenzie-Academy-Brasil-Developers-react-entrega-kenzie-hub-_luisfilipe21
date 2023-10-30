@@ -36,7 +36,7 @@ export const CreateTechModal = () => {
                         {...register("status")}
                         id="status"
                     >
-                        <option>
+                        <option disabled>
                             Selecione um módulo
                         </option>
                         <option value="Iniciante">

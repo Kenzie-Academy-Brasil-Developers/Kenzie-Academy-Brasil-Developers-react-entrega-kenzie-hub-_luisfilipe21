@@ -12,7 +12,8 @@ export const TechProvider = ({ children }) => {
     const [techModal, setTechModal] = useState(false);
 
     const [techEdit, setTechEdit] = useState(false);
-
+    console.log(techEdit)
+    console.log(techModal)
     useEffect(() => {
         const getTechList = async () => {
             try {
@@ -35,11 +36,10 @@ export const TechProvider = ({ children }) => {
             const { data } = await api.post("/users/techs", newTech, {
                 headers: { Authorization: `Bearer ${token}` },
             });
-            console.log(data);
-
-            setTechList([...techList, data]);
 
             toast.success("Post criado");
+            setTechList([...techList, data]);
+            setTechModal(null);
         } catch (error) {
             if (error.response.status === 401) {
                 toast.error("Tecnologia já cadastrada");
@@ -63,9 +63,9 @@ export const TechProvider = ({ children }) => {
                 }
             })
 
-            setTechList(newTechEdit);
             toast.success("Atualizado com sucesso!")
-            // setTechEdit(null);
+            setTechList(newTechEdit);
+            setTechEdit(null);
         } catch (error) {
             toast.error(error.message)
         }

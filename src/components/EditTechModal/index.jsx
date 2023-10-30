@@ -40,7 +40,7 @@ export const EditTechModal = () => {
                         {...register("status")}
                         id="status"
                     >
-                        <option>
+                        <option disabled>
                             Selecione um módulo
                         </option>
                         <option value="Iniciante">
