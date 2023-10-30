@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../Input";
 import style from "./style.module.scss"
-import { SelectTech } from "../forms/SelectTech";
 import { useContext } from "react";
 import { TechContext } from "../../providers/TechContext";
+import { Select } from "../Select";
 
 export const CreateTechModal = () => {
 
@@ -31,11 +31,26 @@ export const CreateTechModal = () => {
                         id="title"
                     />
 
-                    <SelectTech
+                    <Select
                         label="Selecionar status"
                         {...register("status")}
                         id="status"
-                    />
+                    >
+                        <option>
+                            Selecione um módulo
+                        </option>
+                        <option value="Iniciante">
+                            Iniciante
+                        </option>
+
+                        <option value="Intermediário">
+                            Intermediário
+                        </option>
+
+                        <option value="Avançado">
+                            Avançado
+                        </option>
+                    </Select>
 
                     <button type="submit" className="btn login">Cadastrar Tecnologia</button>
                 </form>
