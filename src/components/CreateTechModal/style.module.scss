@@ -1,39 +1,49 @@
-.formBox{
-    width: 370px;
-    height: 342px;
-    border-radius: 4px;
-    background-color: var(--grey-3);
-    gap: 22px;
+.formSection {
+    position: absolute;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    .formHeader{
-        padding: 16px;
-        gap: 90px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center; 
-        width: 100%;
-        background-color: var(--grey-2);
-        color: var(--grey-0);
-        border-radius: 4px 4px 0 0;
-        
-        p{
-            cursor: pointer;
-            font-family: var(--font-primary);
-            color: var(--grey-1);
-        }
-
-    }
-    form{
-        height: 100%;
+    height: 100%;
+    width: 100%;
+    inset: 0; 
+    background-color: rgba(0,0,0,0.5);;
+    
+    .formBox {
+        width: 370px;
+        height: 342px;
+        border-radius: 4px;
+        background-color: var(--grey-3);
+        gap: 22px;
+        margin: 10% auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        align-items: center;
+
+        .formHeader {
+            padding: 16px;
+            gap: 90px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            background-color: var(--grey-2);
+            color: var(--grey-0);
+            border-radius: 4px 4px 0 0;
+
+            p {
+                cursor: pointer;
+                font-family: var(--font-primary);
+                color: var(--grey-1);
+            }
+
+        }
+
+        form {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
 
 
+        }
     }
 }

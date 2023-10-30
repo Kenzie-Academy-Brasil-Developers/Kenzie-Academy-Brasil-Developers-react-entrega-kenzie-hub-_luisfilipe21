@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { TechContext } from "../../../providers/TechContext";
 
 export const TechCard = ({techs}) => {
-    const {setTechEdit, deleteTech} = useContext(TechContext)
+    const {setTechEdit, deleteTech} = useContext(TechContext);
     
     return (
         <li className={style.card}>

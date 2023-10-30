@@ -11,20 +11,7 @@ export const SelectTech = forwardRef(({ label, ...rest }, ref) => {
                 ref={ref}
                 {...rest}
             >
-                <option>
-                    Selecione um módulo
-                </option>
-                <option value="Iniciante">
-                    Iniciante
-                </option>
-
-                <option value="Intermediário">
-                    Intermediário
-                </option>
-
-                <option value="Avançado">
-                    Avançado
-                </option>
+                
             </select>
         </>
     )

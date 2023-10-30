@@ -1,12 +1,12 @@
-import {Input} from "../../Input";
 import style from "./style.module.scss";
+import { Input } from "../../Input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerForm.schema";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
-import {Select} from "../../Select";
+import { Select } from "../../Select";
 import { useState } from "react";
 
 export const RegisterForm = () => {
@@ -27,7 +27,7 @@ export const RegisterForm = () => {
             setLoading(true);
         } catch (error) {
             toast.error("Algo deu errado...")
-        }finally{
+        } finally {
             setLoading(false)
         }
     }
@@ -88,8 +88,28 @@ export const RegisterForm = () => {
                 errors={errors.course_module}
                 label="Selecionar módulo"
                 {...register("course_module")}
-                
-            />
+                id="course_module"
+            >
+                <option>
+                    Selecione um módulo
+                </option>
+                <option value="Primeiro módulo (Introdução ao Frontend)">
+                    Primeiro módulo (Introdução ao Frontend)
+                </option>
+
+                <option value="Segundo Módulo (Frontend avançado)">
+                    Segundo Módulo (Frontend avançado)
+                </option>
+
+                <option value="Terceiro módulo (Introdução ao Backend)">
+                    Terceiro módulo (Introdução ao Backend)
+                </option>
+
+                <option value="Quarto módulo (Backend Avançado)">
+                    Quarto módulo (Backend Avançado)
+                </option>
+            </Select>
+            
             <button type="submit" className="btn login" disabled={loading}>Cadastrar</button>
         </form>
     )

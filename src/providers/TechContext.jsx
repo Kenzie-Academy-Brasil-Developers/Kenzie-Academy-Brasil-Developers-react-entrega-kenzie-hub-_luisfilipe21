@@ -55,9 +55,6 @@ export const TechProvider = ({ children }) => {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
-            console.log("--------------");
-            console.log(data);
-
             const newTechEdit = techList.map(tech => {
                 if (tech.id === techEdit.id) {
                     return data;
@@ -66,12 +63,9 @@ export const TechProvider = ({ children }) => {
                 }
             })
 
-            console.log('----------');
-            console.log(newTechEdit);
-
-            setTechEdit(newTechEdit);
+            setTechList(newTechEdit);
             toast.success("Atualizado com sucesso!")
-
+            // setTechEdit(null);
         } catch (error) {
             toast.error(error.message)
         }
